@@ -1,3 +1,4 @@
+use magick_rust::{magick_wand_genesis, MagickWand};
 use mikack::{error::*, extractors};
 use reqwest::{
     blocking::Client,
@@ -9,9 +10,11 @@ use std::{
     fs::{create_dir_all, File},
     io::prelude::*,
     path::{Path, PathBuf},
+    sync::Once,
 };
 use url::Url;
 
+static START: Once = Once::new();
 struct ImgInfo {
     name: String,
     extension: String,
@@ -29,7 +32,6 @@ impl ImgInfo {
 }
 
 fn main() -> Result<()> {
-    // 迭代所有的 extractor
     for (domain, _name) in extractors::platforms().iter() {
         let extr = extractors::get_extr(domain).unwrap();
         let headers = headers_gen(domain, extr.is_https());
@@ -95,8 +97,24 @@ fn save(img: &ImgInfo) -> Result<()> {
         create_dir_all(&fpath)?;
     }
     fpath.push(img.fname());
-    let mut f = File::create(fpath)?;
+    let mut f = File::create(&fpath)?;
     f.write_all(&img.bytes)?;
 
+    unifoed_process(fpath.to_str().unwrap(), &img.name);
+
     Ok(())
+}
+
+fn unifoed_process(ipath: &str, name: &str) {
+    START.call_once(|| {
+        magick_wand_genesis();
+    });
+    let wand = MagickWand::new();
+    wand.read_image(ipath).unwrap();
+    wand.fit(16, 16);
+    wand.write_image_blob("ico").unwrap();
+    let mut fpath = PathBuf::from("favicon");
+    create_dir_all("favicon").unwrap();
+    fpath.push(format!("{name}.ico", name = name));
+    wand.write_image(fpath.to_str().unwrap()).unwrap();
 }

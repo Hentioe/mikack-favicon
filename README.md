@@ -4,7 +4,7 @@
 
 ## 生成图标
 
-每运行一次自动下载最新的原始图标。当前不支持对图标进行二次统一处理，故没有多余的参数。
+每运行一次自动下载最新的原始图标并进行统一处理。当前不支持对图标进行自定义统一处理，故没有多余的参数。
 
 ### 安装项目
 
@@ -23,10 +23,10 @@ mikack-favicon
 ### 输出目录
 
 ```bash
-dist
+favicon
 ├── 18h.animezilla.com.ico
 ├── 8comic.se.ico
-├── 9hentai.com.png
+├── 9hentai.com.ico
 ├── comic.ikkdm.com.ico
 ├── c-upp.com.ico
 ├── e-hentai.org.ico
@@ -50,7 +50,7 @@ dist
 ├── www.manhuadb.com.ico
 ├── www.manhuadui.com.ico
 ├── www.manhuagui.com.ico
-├── www.onemanhua.com.png
+├── www.onemanhua.com.ico
 ├── www.pufei8.com.ico
 ├── www.qimiaomh.com.ico
 ├── www.tohomh123.com.ico
@@ -62,3 +62,5 @@ dist
 ## 使用图标
 
 因为网页的 favicon 尺寸普遍太小，经过常见的图像缩放算法显示在 GUI 上会出现异常模糊的反效果。为了避免这种情况，mikack 官方涉及到的所有项目都使用紧邻插值算法放大图像。
+
+所以，当前此工具会以（规范中的）最小尺寸 16x16 作为尺寸处理 favicon 目录中的图标。
