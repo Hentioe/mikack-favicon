@@ -1,0 +1,12 @@
+[package]
+name = "mikack-favicon"
+version = "0.1.0"
+authors = ["Hentioe <me@bluerain.io>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mikack = { git = "https://github.com/Hentioe/mikack" }
+reqwest = "0.10.4"
+url = "2.1.1"
