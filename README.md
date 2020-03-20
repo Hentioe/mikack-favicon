@@ -54,9 +54,10 @@ favicon
 ├── www.pufei8.com.ico
 ├── www.qimiaomh.com.ico
 ├── www.tohomh123.com.ico
-└── www.wnacg.org.ico
+├── www.wnacg.org.ico
+└── www.wuqimh.com.ico
 
-0 directories, 31 files
+0 directories, 32 files
 ```
 
 ## 使用图标
