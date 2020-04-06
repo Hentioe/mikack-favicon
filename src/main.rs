@@ -36,9 +36,13 @@ fn main() -> Result<()> {
         let extr = extractors::get_extr(domain).unwrap();
         let headers = headers_gen(domain, extr.is_https());
         if let Some(favicon) = extr.get_favicon() {
-            let img = &get_img(*favicon, headers)?;
-            save(img)?;
-            println!("`{}` has been saved.", img.fname());
+            if !Path::new(&format!("favicon/{}.ico", domain)).exists() {
+                let img = &get_img(*favicon, headers)?;
+                save(img)?;
+                println!("`{}` has been saved.", img.fname());
+            } else {
+                println!("`{}.ico` already exists, skiped.", domain);
+            }
         } else {
             println!("`{}` has no favicon, ignored", domain);
         }
