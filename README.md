@@ -28,6 +28,7 @@ favicon
 ├── 8comic.se.ico
 ├── 9hentai.com.ico
 ├── comic.ikkdm.com.ico
+├── comic.kkkkdm.com.ico
 ├── c-upp.com.ico
 ├── e-hentai.org.ico
 ├── loveheaven.net.ico
@@ -37,6 +38,7 @@ favicon
 ├── www.177mh.net.ico
 ├── www.177pic.info.ico
 ├── www.2animx.com.ico
+├── www.90mh.com.ico
 ├── www.bidongmh.com.ico
 ├── www.bnmanhua.com.ico
 ├── www.cartoonmad.com.ico
@@ -47,17 +49,20 @@ favicon
 ├── www.kuaikanmanhua.com.ico
 ├── www.luscious.net.ico
 ├── www.mangabz.com.ico
+├── www.mangareader.net.ico
 ├── www.manhuadb.com.ico
 ├── www.manhuadui.com.ico
 ├── www.manhuagui.com.ico
+├── www.mkzhan.com.ico
 ├── www.onemanhua.com.ico
 ├── www.pufei8.com.ico
 ├── www.qimiaomh.com.ico
 ├── www.tohomh123.com.ico
+├── www.tvbsmh.com.ico
 ├── www.wnacg.org.ico
 └── www.wuqimh.com.ico
 
-0 directories, 32 files
+0 directories, 37 files
 ```
 
 ## 使用图标
